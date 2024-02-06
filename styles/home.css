@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'minecraft1';
+    src: url('/fonts/minecraft1.woff2') format('woff2'),
+         url('/fonts/minecraft1.woff') format('woff'),
+         url('/fonts/minecraft1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-size: 120px;
+}
+
+body {
+    font-family: 'minecraft1', sans-serif;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -177,6 +191,45 @@ p1 {
 p3 {
     padding: 5px;
 }
+
 #workExperience {
     margin-left: 780px;
+}
+
+#personalProject {
+    margin-left: 780px;
+}
+
+#funFacts {
+    margin-left: 830px;
+}
+
+.move-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.table-contents {
+    width: 970px; 
+    height: 80px; 
+    background-color: pink; 
+    border: 2px solid rgb(255, 255, 255); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    margin: 20px; 
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px pink;
+}
+
+.move-contents {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    gap: 70px;
+    position: absolute;
+    top: 37px;
+    right: 280px;
+    font-size: 45px;
 }

@@ -2,9 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const paragraphs = document.querySelectorAll('.msg-bot');
     const paragraphs1 = document.querySelectorAll('.msg-user');
     const workExperience = document.getElementById('workExperience');
+    const personalProject = document.getElementById('personalProject');
+    const funFacts = document.getElementById('funFacts');
     const followUpMessage = document.getElementById('followUpMessage');
+    const followUpMessage1 = document.getElementById('followUpMessage1');
+    const followUpMessage2 = document.getElementById('followUpMessage2');
     workExperience.style.display = 'none';
     followUpMessage.style.display = 'none';
+    personalProject.style.display = 'none';
+    followUpMessage1.style.display = 'none';
+    funFacts.style.display = 'none';
+    followUpMessage2.style.display = 'none';
 
     let delay = 0; 
 
@@ -26,18 +34,92 @@ document.addEventListener("DOMContentLoaded", () => {
         box.scrollTop = box.scrollHeight;
     }
     
-    const toggleButton = document.getElementById('workBtn'); // Replace 'toggleButton' with the actual button ID
-    toggleButton.addEventListener('click', () => {
-        if (workExperience.style.display === 'none') {
-            workExperience.style.display = 'inline-block';
+    const toggleButton = document.getElementById('workBtn'); 
+    const toggleButton1 = document.getElementById('personal-project');
+    const toggleButton2 = document.getElementById('fun-facts');
+
+    
+
+    if(toggleButton) {
+        toggleButton.addEventListener('click', () => {
+            if (workExperience.style.display === 'none') {
+                workExperience.style.display = 'inline-block';
+            } else {
+                workExperience.style.display = 'none';
+            }
+
+            if (followUpMessage.style.display === 'none') {
+                followUpMessage.style.display = 'inline-block';
+            } else {
+                followUpMessage.style.display = 'none';
+            }
+        });
+    }
+
+    if(toggleButton1){
+        toggleButton1.addEventListener('click', () => {
+            if(personalProject.style.display === 'none') {
+                personalProject.style.display = 'inline-block';
+            } else {
+                personalProject.style.display = 'none';
+            }
+
+            if (followUpMessage1.style.display === 'none') {
+                followUpMessage1.style.display = 'inline-block';
+            } else {
+                followUpMessage1.style.display = 'none';
+            }
+        });
+    }
+
+    if(toggleButton2){
+        toggleButton2.addEventListener('click', () => {
+            if(funFacts.style.display === 'none') {
+                funFacts.style.display = 'inline-block';
+            } else {
+                funFacts.style.display = 'none';
+            }
+
+            if (followUpMessage2.style.display === 'none') {
+                followUpMessage2.style.display = 'inline-block';
+            } else {
+                followUpMessage2.style.display = 'none';
+            }
+        });
+    }
+
+
+    const form = document.getElementById('move-input-box');
+    const errorMessage = document.getElementById('errorMessage');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from submitting traditionally
+        console.log('Form submit event captured'); // Debugging line
+
+        const userInput = document.getElementById('chat-logo').value.toLowerCase();
+        console.log(`User Input: ${userInput}`); // Debugging line
+
+        const inputToButtonIdMap = {
+            'work experience': 'workBtn',
+            'personal projects': 'personal-project',
+            'personal project': 'personal-project',
+            'fun facts': 'fun-facts'
+        };
+
+        if (inputToButtonIdMap.hasOwnProperty(userInput)) {
+            const buttonId = inputToButtonIdMap[userInput];
+            const button = document.getElementById(buttonId);
+            console.log(`Button to click: ${buttonId}`); // Debugging line
+            if (button) {
+                button.click();
+                errorMessage.style.display = 'none';
+            }
         } else {
-            workExperience.style.display = 'none';
+            errorMessage.style.display = 'block';
         }
 
-        if (followUpMessage.style.display === 'none') {
-            followUpMessage.style.display = 'inline-block';
-        } else {
-            followUpMessage.style.display = 'none';
-        }
+        document.getElementById('chat-logo').value = '';
     });
+   
 });
+
