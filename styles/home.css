@@ -5,12 +5,13 @@
          url('/fonts/minecraft1.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-    font-size: 120px;
 }
 
 body {
     font-family: 'minecraft1', sans-serif;
+    font-size: 20px;
 }
+
 
 html, body {
     margin: 0;
@@ -47,7 +48,7 @@ html, body {
 #text {
     background-color: white;
     box-shadow: 10px 10px 10px pink;
-    width: 958px;
+    width: 860px;
     padding: 10px;
     border: pink;
     border-radius: 20px;
@@ -56,10 +57,14 @@ html, body {
     text-indent: 35px;
 }
 
+#text:focus {
+    outline: none;
+}
+
 .move-input-box{
     position: absolute;
     top: 106%;
-    left: 50%;
+    left: 46.5%;
     transform: translate(-50%, -50%);
 }
 
@@ -138,7 +143,7 @@ a, a:visited, a:hover, a:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 15px;
+    margin-left: 9.5px;
     width: 50px;
     height: 50px;
 }
@@ -155,7 +160,7 @@ a, a:visited, a:hover, a:active {
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: -140px; 
+    bottom: -170px; 
     left: 50%; 
     transform: translateX(-50%); 
     font-size: 20px;
@@ -174,8 +179,10 @@ button{
 }
 
 button:hover {
-    background-color: rgb(174, 108, 119);
-    border-color: rgb(174, 108, 119);
+    background-color: rgb(255, 255, 255);
+    border-color: pink;
+    box-shadow: 5px 5px 5px pink;
+    color: pink;
 }
 
 p1 {
@@ -194,14 +201,32 @@ p3 {
 
 #workExperience {
     margin-left: 780px;
+    font-family: 'minecraft1', sans-serif;
 }
 
 #personalProject {
-    margin-left: 780px;
+    margin-left: 770px;
+    font-family: 'minecraft1', sans-serif;
 }
 
 #funFacts {
     margin-left: 830px;
+    font-family: 'minecraft1', sans-serif;
+}
+
+#workBtn{
+    font-family: 'minecraft1', sans-serif;
+    font-size: 19px;
+}
+
+#personal-project {
+    font-family: 'minecraft1', sans-serif;
+    font-size: 19px;
+}
+
+#fun-facts {
+    font-family: 'minecraft1', sans-serif;
+    font-size: 19px;
 }
 
 .move-table {
@@ -227,9 +252,93 @@ p3 {
     align-items: center;
     justify-content: center;
     margin-right: 20px;
-    gap: 70px;
-    position: absolute;
-    top: 37px;
-    right: 280px;
     font-size: 45px;
+    gap: 70px;
+    margin-top: 14px;
 }
+
+
+.move-contents a:hover {
+    color: pink;
+    background-color: rgb(255, 255, 255);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px rgba(156, 115, 115, 0.2);
+}
+
+.view-pdf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: white; 
+    padding: 40px;
+    border: none;
+    border-radius: 20px;
+    width: 900px; 
+    box-shadow: 10px 10px 10px pink;
+    opacity: 0.8;
+    height: 400px;
+}
+
+.move-container {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.move-contact-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact-me {
+    font-size: 50px;
+}
+
+.move-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 0em;
+}
+
+#email {
+    font-size: 30px;
+}
+
+.move-enter{
+    position: absolute; 
+    z-index: 9999; 
+    left: 81%; 
+    top: 106%; 
+    transform: translate(-50%, -50%); 
+}
+
+#submit{
+    font-family: 'minecraft1', sans-serif;
+    font-size: 18px;
+    border-radius: 20px;
+    height: 53px;
+    margin: 30px;
+    width: 90px;
+    background-color: white;
+    box-shadow: 10px 10px 10px pink;
+    border-color: none;
+    color: rgb(101, 78, 82);
+}
+
+#submit:hover{
+    background-color: pink;
+    color: white;
+    border-color: none;
+}
+
+
+    

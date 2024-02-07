@@ -37,67 +37,65 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleButton = document.getElementById('workBtn'); 
     const toggleButton1 = document.getElementById('personal-project');
     const toggleButton2 = document.getElementById('fun-facts');
-
     
+    do {
+        if(toggleButton) {
+            toggleButton.addEventListener('click', () => {
+                if (workExperience.style.display === 'none') {
+                    workExperience.style.display = 'inline-block';
+                } else {
+                    workExperience.style.display = 'none';
+                }
 
-    if(toggleButton) {
-        toggleButton.addEventListener('click', () => {
-            if (workExperience.style.display === 'none') {
-                workExperience.style.display = 'inline-block';
-            } else {
-                workExperience.style.display = 'none';
-            }
+                if (followUpMessage.style.display === 'none') {
+                    followUpMessage.style.display = 'inline-block';
+                } else {
+                    followUpMessage.style.display = 'none';
+                }
+            });
+        }
 
-            if (followUpMessage.style.display === 'none') {
-                followUpMessage.style.display = 'inline-block';
-            } else {
-                followUpMessage.style.display = 'none';
-            }
-        });
-    }
+        if(toggleButton1){
+            toggleButton1.addEventListener('click', () => {
+                if(personalProject.style.display === 'none') {
+                    personalProject.style.display = 'inline-block';
+                } else {
+                    personalProject.style.display = 'none';
+                }
 
-    if(toggleButton1){
-        toggleButton1.addEventListener('click', () => {
-            if(personalProject.style.display === 'none') {
-                personalProject.style.display = 'inline-block';
-            } else {
-                personalProject.style.display = 'none';
-            }
+                if (followUpMessage1.style.display === 'none') {
+                    followUpMessage1.style.display = 'inline-block';
+                } else {
+                    followUpMessage1.style.display = 'none';
+                }
+            });
+        }
 
-            if (followUpMessage1.style.display === 'none') {
-                followUpMessage1.style.display = 'inline-block';
-            } else {
-                followUpMessage1.style.display = 'none';
-            }
-        });
-    }
+        if(toggleButton2){
+            toggleButton2.addEventListener('click', () => {
+                if(funFacts.style.display === 'none') {
+                    funFacts.style.display = 'inline-block';
+                } else {
+                    funFacts.style.display = 'none';
+                }
 
-    if(toggleButton2){
-        toggleButton2.addEventListener('click', () => {
-            if(funFacts.style.display === 'none') {
-                funFacts.style.display = 'inline-block';
-            } else {
-                funFacts.style.display = 'none';
-            }
-
-            if (followUpMessage2.style.display === 'none') {
-                followUpMessage2.style.display = 'inline-block';
-            } else {
-                followUpMessage2.style.display = 'none';
-            }
-        });
-    }
+                if (followUpMessage2.style.display === 'none') {
+                    followUpMessage2.style.display = 'inline-block';
+                } else {
+                    followUpMessage2.style.display = 'none';
+                }
+            });
+        }
+    }while(!toggleButton.onclick || !toggleButton1.onclick || !toggleButton2.onclick) 
 
 
     const form = document.getElementById('move-input-box');
     const errorMessage = document.getElementById('errorMessage');
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form from submitting traditionally
-        console.log('Form submit event captured'); // Debugging line
+        event.preventDefault(); 
 
         const userInput = document.getElementById('chat-logo').value.toLowerCase();
-        console.log(`User Input: ${userInput}`); // Debugging line
 
         const inputToButtonIdMap = {
             'work experience': 'workBtn',
