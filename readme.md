@@ -1,4 +1,4 @@
-Host link;
+Host link:
 ltlely.github.io
 
 Inspired by:
