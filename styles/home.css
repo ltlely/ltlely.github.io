@@ -1,19 +1,13 @@
 @font-face {
     font-family: 'minecraft1';
-    src: url('/fonts/minecraft1.woff2') format('woff2'),
-         url('/fonts/minecraft1.woff') format('woff'),
-         url('/fonts/minecraft1.ttf') format('truetype');
+    src: url('../fonts/minecraft1.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 body {
     font-family: 'minecraft1', sans-serif;
-    font-size: 20px;
-}
-
-
-html, body {
+    font-size: calc(1vw + 1vh + .5vmin);
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -22,7 +16,7 @@ html, body {
     overflow-y: auto;
     max-height: 900px;
 }
-  
+
 #background {
     position: fixed;
     top: 0;
@@ -34,6 +28,8 @@ html, body {
 }
 
 .transparent-box {
+    display: flex;
+    flex-direction: column;
     background-color: white; 
     padding: 40px;
     border: none;
@@ -70,8 +66,11 @@ html, body {
 
 .move-chat-container {
     position: absolute;
+    display: flex;
     top: 60%;
     left: 50%;
+    width: 80vw;
+    max-width: 900px;
     transform: translate(-50%, -50%);
 }
 
@@ -84,8 +83,9 @@ html, body {
     border-color: pink;
     box-shadow: 5px 5px 5px pink;
     margin-left: -25px;
-    margin-right: 200px;
+    margin-right: auto;
     margin-bottom: 20px;
+    max-width: 60%
 }
 
 #chat-logo {
@@ -107,10 +107,10 @@ html, body {
     box-shadow: 5px 5px 5px pink;
     background-color: pink; 
     width: auto;
-    margin-left: 600px;
-    margin-right: -25px;
+    margin-left: 0;
     text-align: left;
     margin-bottom: 10px;
+    align-self: flex-end;
 }
 
 .msg-bot p{
@@ -160,8 +160,8 @@ a, a:visited, a:hover, a:active {
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: -170px; 
-    left: 50%; 
+    bottom: -80px; 
+    left: 47%; 
     transform: translateX(-50%); 
     font-size: 20px;
     gap: 60px;
@@ -200,17 +200,16 @@ p3 {
 }
 
 #workExperience {
-    margin-left: 780px;
+    /* margin-left: 700px; */
     font-family: 'minecraft1', sans-serif;
 }
 
 #personalProject {
-    margin-left: 770px;
+    /* margin-left: 770px; */
     font-family: 'minecraft1', sans-serif;
 }
 
 #funFacts {
-    margin-left: 830px;
     font-family: 'minecraft1', sans-serif;
 }
 
@@ -232,12 +231,14 @@ p3 {
 .move-table {
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: relative;
 }
 
 .table-contents {
-    width: 970px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 970px; 
     height: 80px; 
     background-color: pink; 
     border: 2px solid rgb(255, 255, 255); 
@@ -251,10 +252,8 @@ p3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 20px;
-    font-size: 45px;
-    gap: 70px;
-    margin-top: 14px;
+    font-size: calc(1.5vw + 1.5vh + 0.5vmin);
+    gap: 8vw;
 }
 
 
@@ -285,9 +284,9 @@ p3 {
 }
 
 .move-container {
-    position: absolute;
     top: 60%;
     left: 50%;
+    width: 90%;
     transform: translate(-50%, -50%);
 }
 
@@ -313,32 +312,3 @@ p3 {
     font-size: 30px;
 }
 
-.move-enter{
-    position: absolute; 
-    z-index: 9999; 
-    left: 81%; 
-    top: 106%; 
-    transform: translate(-50%, -50%); 
-}
-
-#submit{
-    font-family: 'minecraft1', sans-serif;
-    font-size: 18px;
-    border-radius: 20px;
-    height: 53px;
-    margin: 30px;
-    width: 90px;
-    background-color: white;
-    box-shadow: 10px 10px 10px pink;
-    border-color: none;
-    color: rgb(101, 78, 82);
-}
-
-#submit:hover{
-    background-color: pink;
-    color: white;
-    border-color: none;
-}
-
-
-    

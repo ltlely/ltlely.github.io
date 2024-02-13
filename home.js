@@ -37,87 +37,69 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleButton = document.getElementById('workBtn'); 
     const toggleButton1 = document.getElementById('personal-project');
     const toggleButton2 = document.getElementById('fun-facts');
+    toggleButton1.disabled = true;
+    toggleButton1.style.opacity = 0.25;
+    toggleButton2.disabled = true;
+    toggleButton2.style.opacity = 0.25;
     
-    do {
-        if(toggleButton) {
-            toggleButton.addEventListener('click', () => {
-                if (workExperience.style.display === 'none') {
-                    workExperience.style.display = 'inline-block';
-                } else {
-                    workExperience.style.display = 'none';
-                }
-
-                if (followUpMessage.style.display === 'none') {
-                    followUpMessage.style.display = 'inline-block';
-                } else {
-                    followUpMessage.style.display = 'none';
-                }
-            });
-        }
-
-        if(toggleButton1){
-            toggleButton1.addEventListener('click', () => {
-                if(personalProject.style.display === 'none') {
-                    personalProject.style.display = 'inline-block';
-                } else {
-                    personalProject.style.display = 'none';
-                }
-
-                if (followUpMessage1.style.display === 'none') {
-                    followUpMessage1.style.display = 'inline-block';
-                } else {
-                    followUpMessage1.style.display = 'none';
-                }
-            });
-        }
-
-        if(toggleButton2){
-            toggleButton2.addEventListener('click', () => {
-                if(funFacts.style.display === 'none') {
-                    funFacts.style.display = 'inline-block';
-                } else {
-                    funFacts.style.display = 'none';
-                }
-
-                if (followUpMessage2.style.display === 'none') {
-                    followUpMessage2.style.display = 'inline-block';
-                } else {
-                    followUpMessage2.style.display = 'none';
-                }
-            });
-        }
-    }while(!toggleButton.onclick || !toggleButton1.onclick || !toggleButton2.onclick) 
-
-
-    const form = document.getElementById('move-input-box');
-    const errorMessage = document.getElementById('errorMessage');
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); 
-
-        const userInput = document.getElementById('chat-logo').value.toLowerCase();
-
-        const inputToButtonIdMap = {
-            'work experience': 'workBtn',
-            'personal projects': 'personal-project',
-            'personal project': 'personal-project',
-            'fun facts': 'fun-facts'
-        };
-
-        if (inputToButtonIdMap.hasOwnProperty(userInput)) {
-            const buttonId = inputToButtonIdMap[userInput];
-            const button = document.getElementById(buttonId);
-            console.log(`Button to click: ${buttonId}`); // Debugging line
-            if (button) {
-                button.click();
-                errorMessage.style.display = 'none';
+    if(toggleButton) {
+        toggleButton.addEventListener('click', () => {
+            if (workExperience.style.display === 'none') {
+                workExperience.style.display = 'inline-block';
+            } else {
+                workExperience.style.display = 'none';
             }
-        } else {
-            errorMessage.style.display = 'block';
-        }
 
-        document.getElementById('chat-logo').value = '';
-    });
-   
+            if (followUpMessage.style.display === 'none') {
+                followUpMessage.style.display = 'block';
+            } else {
+                followUpMessage.style.display = 'none';
+            }
+
+            toggleButton.disabled = true;
+            toggleButton.style.opacity = 0.25;
+            toggleButton1.disabled = false;
+            toggleButton1.style.opacity = 1;
+        });
+    }
+
+    if(toggleButton1){
+        toggleButton1.addEventListener('click', () => {
+            if(personalProject.style.display === 'none') {
+                personalProject.style.display = 'inline-block';
+            } else {
+                personalProject.style.display = 'none';
+            }
+
+            if (followUpMessage1.style.display === 'none') {
+                followUpMessage1.style.display = 'inline-block';
+            } else {
+                followUpMessage1.style.display = 'none';
+            }
+
+            toggleButton1.disabled = true;
+            toggleButton1.style.opacity = 0.25;
+            toggleButton2.disabled = false;
+            toggleButton2.style.opacity = 1;
+        });
+    }
+
+    if(toggleButton2){
+        toggleButton2.addEventListener('click', () => {
+            if(funFacts.style.display === 'none') {
+                funFacts.style.display = 'inline-block';
+            } else {
+                funFacts.style.display = 'none';
+            }
+
+            if (followUpMessage2.style.display === 'none') {
+                followUpMessage2.style.display = 'inline-block';
+            } else {
+                followUpMessage2.style.display = 'none';
+            }
+
+            toggleButton2.disabled = true;
+            toggleButton2.style.opacity = 0.25;
+        });
+    }
 });
-
