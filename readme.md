@@ -1,5 +1,5 @@
 Host link:
-https://ltlely.github.io/
+[ltlely.github.io](https://ltlely.github.io/)
 
 Inspired by:
 https://jung.ninja/
